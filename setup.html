@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Developer Setup · ExerciseDB</title>
+  <link rel="icon" href="data:,">
   <style>
     /* ── Design Tokens ──────────────────────────────── */
     :root {
@@ -455,12 +456,128 @@
     ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
 
     /* ── Responsive ──────────────────────────────────── */
+    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #ff9b6f;outline-offset:3px}
+    button:active,.back-link:active{transform:translateY(1px)}
+    button,.back-link{min-height:40px}
+    .tab-bar,.selector-tabs{max-width:100%;overflow-x:auto;scrollbar-width:thin}
+    .code-block,.code-pre,.endpoint-card,.llm-prompt-box{max-width:100%}
+    .code-pre{min-width:0}
+
     @media (max-width: 768px) {
       .page-shell { grid-template-columns: 1fr; }
       .page-nav { display: none; }
-      .page-content { padding: 32px 0 60px 0; }
+      .page-content { width: 100%; min-width: 0; max-width: 100%; padding: 32px 0 60px 0; }
+      .section,.section-header,.section-body,.step-list,.step,.step-body { min-width: 0; max-width: 100%; }
       .section-body { padding-left: 0; }
       .section-desc { padding-left: 0; }
+      .site-header {
+        height: auto;
+        min-height: 58px;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        padding: 8px 16px;
+      }
+      .site-logo { line-height: 1.1; }
+      .header-label { max-width: 96px; line-height: 1.25; }
+      .back-link {
+        min-height: 44px;
+        margin-left: auto;
+        padding: 6px 12px;
+      }
+      .page-shell { padding: 0 16px; }
+      .section { margin-bottom: 54px; }
+      .section-header { align-items: flex-start; }
+      .section-title { font-size: 21px; line-height: 1.15; }
+      .section-desc {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+      .tab-bar {
+        gap: 8px;
+        padding-bottom: 2px;
+        scroll-snap-type: x proximity;
+      }
+      .tab-btn {
+        min-height: 44px;
+        padding: 10px 14px;
+        scroll-snap-align: start;
+      }
+      .step { align-items: flex-start; }
+      .step-body { min-width: 0; }
+      .code-block { border-radius: 12px; }
+      .code-pre {
+        width: 100%;
+        padding: 16px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .copy-btn {
+        min-width: 52px;
+        min-height: 44px;
+      }
+      .generate-btn,.copy-prompt-btn {
+        min-height: 44px;
+        justify-content: center;
+      }
+      .generate-status {
+        display: block;
+        margin: 8px 0 0;
+      }
+      .url-input-row {
+        align-items: stretch;
+        flex-wrap: wrap;
+      }
+      .url-label { width: 100%; }
+      .url-input {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+      }
+      .endpoint-header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .endpoint-path {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .endpoint-desc {
+        flex-basis: 100%;
+        margin-left: 0;
+      }
+      .llm-selectors { min-width: 0; }
+      .selector-group {
+        width: 100%;
+        min-width: 0;
+      }
+      .selector-tabs {
+        padding-bottom: 2px;
+        scroll-snap-type: x proximity;
+      }
+      .selector-btn {
+        min-height: 44px;
+        white-space: nowrap;
+        scroll-snap-align: start;
+      }
+      .llm-prompt-box {
+        min-height: 320px;
+        overflow-x: auto;
+      }
+      .llm-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 420px) {
+      .site-header { padding-inline: 12px; }
+      .page-shell { padding: 0 12px; }
+      .back-link { max-width: 122px; justify-content: center; text-align: center; }
+      .section-num,.step-num { width: 28px; height: 28px; }
+      .section-header { gap: 10px; }
+      .section-desc,.section-body { padding-left: 0; }
+      .step { gap: 12px; }
+      .step-list { gap: 24px; }
+      .code-pre { font-size: 11.5px; }
     }
   </style>
 </head>
@@ -1468,8 +1585,23 @@ function switchDbTab(db) {
   createSqlEl.textContent = DB_SQL[db];
 }
 
+function fallbackCopy(text) {
+  const el = document.createElement('textarea');
+  el.value = text;
+  el.setAttribute('readonly', '');
+  el.style.position = 'fixed';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  try { document.execCommand('copy'); } finally { el.remove(); }
+}
+
 function copyToClipboard(text, btn, resetLabel = 'Copy') {
-  navigator.clipboard.writeText(text).then(() => {
+  const write = navigator.clipboard?.writeText
+    ? navigator.clipboard.writeText(text).catch(() => fallbackCopy(text))
+    : Promise.resolve(fallbackCopy(text));
+
+  write.then(() => {
     btn.textContent = 'Copied!';
     btn.classList.add('copied');
     setTimeout(() => {
@@ -1637,7 +1769,11 @@ document.querySelectorAll('#llm-db-tabs .selector-btn').forEach(btn => {
 });
 
 copyPromptBtn.addEventListener('click', () => {
-  navigator.clipboard.writeText(llmPromptBox.value).then(() => {
+  const write = navigator.clipboard?.writeText
+    ? navigator.clipboard.writeText(llmPromptBox.value).catch(() => fallbackCopy(llmPromptBox.value))
+    : Promise.resolve(fallbackCopy(llmPromptBox.value));
+
+  write.then(() => {
     copyPromptBtn.textContent = '✓ Copied!';
     copyPromptBtn.classList.add('copied');
     setTimeout(() => {
