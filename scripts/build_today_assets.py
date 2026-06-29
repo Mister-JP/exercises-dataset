@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "today-assets"
 SHEETS = ASSETS / "sheets"
 SIZE = 720
-GIF_FRAME_DURATION_MS = 360
+GIF_FRAME_DURATION_MS = 650
 
 
 def contain_square(image: Image.Image) -> Image.Image:
