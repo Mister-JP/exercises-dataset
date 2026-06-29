@@ -9,8 +9,8 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "today-assets"
 SHEETS = ASSETS / "sheets"
-FRAMES = ASSETS / "frames"
 SIZE = 720
+GIF_FRAME_DURATION_MS = 360
 
 
 def contain_square(image: Image.Image) -> Image.Image:
@@ -33,23 +33,18 @@ def crop_panels(sheet: Image.Image) -> list[Image.Image]:
 
 
 def main() -> None:
-    FRAMES.mkdir(parents=True, exist_ok=True)
     for sheet_path in sorted(SHEETS.glob("*.png")):
         if sheet_path.name.startswith("ai-reference"):
             continue
         slug = sheet_path.stem
         frames = crop_panels(Image.open(sheet_path))
-        slug_dir = FRAMES / slug
-        slug_dir.mkdir(exist_ok=True)
-        for index, frame in enumerate(frames, start=1):
-            frame.save(slug_dir / f"{index:02d}.jpg", quality=92, optimize=True)
         frames[0].save(ASSETS / f"{slug}.jpg", quality=94, optimize=True)
         sequence = frames + frames[-2:0:-1]
         sequence[0].save(
             ASSETS / f"{slug}.gif",
             save_all=True,
             append_images=sequence[1:],
-            duration=190,
+            duration=GIF_FRAME_DURATION_MS,
             loop=0,
             optimize=True,
             disposal=2,
