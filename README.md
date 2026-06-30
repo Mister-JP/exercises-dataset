@@ -72,7 +72,7 @@ Each exercise entry contains:
 
 ## 🖥️ Interactive Browser & Developer Setup
 
-This repository includes two ready-to-use HTML tools — no server required, just open in a browser.
+This repository includes ready-to-use HTML tools — no server required, just open in a browser.
 
 ### `index.html` — Exercise Browser
 
@@ -90,6 +90,13 @@ A step-by-step guide for integrating the dataset into your own application:
 2. **API Integration** — Copy-paste client code in **JavaScript, Python, C#, Java, PHP, Go, and cURL** showing how to call your backend API. Enter your base URL and all examples update live.
 3. **Ask Your LLM** — A structured prompt (choose your framework + database) that you can paste into ChatGPT, Claude, or Gemini to generate a complete, production-ready REST API in one shot. Supports Express.js, FastAPI, ASP.NET Core, Spring Boot, Laravel, and Gin.
 
+### `lower-body.html` — Lower Body Plan
+
+A guided glutes + legs workout page with:
+- A 40-45 minute no-equipment session layout
+- Local generated bitmap stills and GIF demos for every movement
+- Saved progress checkboxes and a still/GIF display toggle
+
 ---
 
 ## 📂 File Structure
@@ -100,7 +107,9 @@ exercises-dataset/
 │   └── exercises.json       # Full dataset — 1,324 exercise records (JSON array)
 ├── images/                  # Exercise thumbnail images (.jpg) — 1,324 files
 ├── videos/                  # Exercise animation GIFs (.gif) — 1,324 files
+├── lower-body-assets/       # Generated stills, GIFs, and source sheets for lower-body.html
 ├── index.html               # Interactive exercise browser (client-side, no server needed)
+├── lower-body.html          # Guided no-equipment lower-body plan
 ├── setup.html               # Developer setup guide (DB import + API integration)
 └── README.md
 ```

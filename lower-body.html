@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#e85a1d">
+  <title>Lower Body Plan · ExerciseDB</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root{--bg:#f7f4ef;--surface:#fff;--ink:#181714;--muted:#706a61;--line:#e5ded4;--accent:#e85a1d;--accent-soft:#fff0e6;--accent-ink:#83300c;--green:#19724f;--green-soft:#eaf6ef;--dark:#221f1b;--radius:16px;--shadow:0 14px 36px rgba(40,31,22,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer}a{color:inherit}.page{width:min(1160px,calc(100% - 32px));margin:auto;padding:16px 0 58px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:7px 0 20px}.brand{font-size:19px;font-weight:950;letter-spacing:-.05em;text-decoration:none}.brand span{color:var(--accent)}.nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}.nav a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 11px;border:1px solid transparent;border-radius:999px;color:var(--muted);font-size:13px;font-weight:850;text-decoration:none}.nav a:hover{background:#fff;color:var(--ink)}.nav a.active{border-color:#f5bea4;background:var(--accent-soft);color:var(--accent-ink)}
+    .hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,410px);gap:clamp(20px,4vw,42px);align-items:end;overflow:hidden;padding:clamp(24px,5vw,48px);border-radius:24px;background:linear-gradient(135deg,#1e1b18,#35302a 58%,#5b311f);color:#fff;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;right:-130px;top:-160px;width:330px;height:330px;border-radius:50%;background:var(--accent)}.hero>*{position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;gap:8px;width:max-content;padding:6px 10px;border:1px solid #ffffff38;border-radius:999px;font-size:11px;font-weight:950;letter-spacing:.1em;text-transform:uppercase}.eyebrow i{width:7px;height:7px;border-radius:50%;background:#ffb68f}.hero h1{max-width:690px;margin:17px 0 12px;font-size:clamp(38px,6vw,64px);line-height:.96;letter-spacing:-.065em}.hero p{max-width:650px;margin:0;color:#ffffffcf;font-size:16px}.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.hero-meta span{padding:7px 10px;border:1px solid #ffffff25;border-radius:9px;background:#0002;font-size:12px;font-weight:800}.hero-meta b{color:#fff}.hero-visual{overflow:hidden;border:1px solid #ffffff2e;border-radius:18px;background:#fff;box-shadow:0 20px 52px rgba(0,0,0,.22)}.hero-visual img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:#fff}
+    .workout-bar{position:sticky;top:10px;z-index:10;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;gap:12px;align-items:center;margin:16px 0 22px;padding:12px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.94);box-shadow:0 10px 26px rgba(40,31,22,.07);backdrop-filter:blur(12px)}.progress-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:18px;font-weight:950}.bar-copy strong{display:block}.bar-copy small{display:block;margin:2px 0 7px;color:var(--muted);font-size:12px}.track{height:7px;overflow:hidden;border-radius:999px;background:#ebe6df}.fill{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--accent),#f09a38);transition:width .18s}.count{color:var(--muted);font-size:13px;font-weight:950;font-variant-numeric:tabular-nums}.mode{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:10px;background:#f8f5f0}.mode button,.reset{min-height:36px;border-radius:8px;font-size:12px;font-weight:950}.mode button{padding:0 10px;border:0;background:transparent;color:var(--muted)}.mode button[aria-pressed=true]{background:var(--dark);color:#fff}.reset{padding:0 12px;border:1px solid var(--line);background:#fff;color:#5d574f}.reset:hover{border-color:#cfc5b9;color:var(--ink)}
+    .rule{display:flex;gap:10px;margin:0 0 28px;padding:14px 15px;border:1px solid #f5c4ac;border-radius:13px;background:var(--accent-soft);color:#662809}.rule b{font-weight:950}.rule-mark{display:grid;place-items:center;flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:950}
+    .quick-jump{display:flex;gap:8px;overflow:auto;margin:0 0 28px;padding-bottom:4px;scrollbar-width:thin}.quick-jump a{flex:0 0 auto;padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#5d574f;font-size:12px;font-weight:900;text-decoration:none}.quick-jump a:hover{border-color:#d3c8bb;color:var(--ink)}
+    .block{margin-top:34px;scroll-margin-top:96px}.block-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:end;margin-bottom:13px}.kicker{color:var(--accent);font-size:11px;font-weight:950;letter-spacing:.12em;text-transform:uppercase}.block h2{margin:3px 0 0;font-size:29px;line-height:1.05;letter-spacing:-.055em}.block-note{max-width:430px;margin:0;color:var(--muted);font-size:12px;text-align:right}.block-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.block-meta span{display:inline-flex;min-height:28px;align-items:center;padding:5px 8px;border-radius:999px;background:#fff;color:#5e574f;font-size:11px;font-weight:900;border:1px solid var(--line)}
+    .moves{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.move{display:grid;grid-template-columns:190px minmax(0,1fr);overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 6px 16px rgba(40,31,22,.04);transition:border-color .16s,box-shadow .16s,transform .16s}.move:hover{transform:translateY(-1px);border-color:#d0c6ba;box-shadow:var(--shadow)}.move.done{border-color:#9ed5ba;background:linear-gradient(90deg,#f2fbf5,#fff 38%)}.media{position:relative;overflow:hidden;min-height:190px;background:#fff}.media img{display:block;width:100%;height:100%;object-fit:cover;background:#fff}.gif-badge{position:absolute;right:8px;bottom:8px;display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:5px 8px;border-radius:999px;background:#111d;color:#fff;font-size:10px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.copy{display:grid;grid-template-rows:auto 1fr auto;gap:9px;padding:14px}.topline{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.move h3{margin:0;font-size:20px;line-height:1.08;letter-spacing:-.038em}.dose{display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding:6px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-size:11px;font-weight:950;white-space:nowrap}.cue{margin:0;color:#4f4942;font-size:13px;line-height:1.42}.fine{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.35}.check{display:flex;align-items:center;justify-content:space-between;gap:10px}.check label{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:#57524b;font-size:12px;font-weight:950;cursor:pointer}.check input{appearance:none;width:18px;height:18px;margin:0;border:2px solid #c5bdb4;border-radius:50%;background:#fff;position:relative}.check input:checked{border-color:var(--green);background:var(--green)}.check input:checked:after{content:"";position:absolute;left:4px;top:1px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}.tempo{color:var(--muted);font-size:11px;font-weight:900;text-align:right}
+    .footer{max-width:720px;margin:42px auto 0;color:var(--muted);font-size:12px;line-height:1.5;text-align:center}.footer b{color:var(--ink)}
+    a:focus-visible,button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid #ffae85;outline-offset:3px}button:active,.quick-jump a:active,.check label:active{transform:translateY(1px)}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.hero-visual{max-width:430px}.moves{grid-template-columns:1fr}.block-head{display:block}.block-note{text-align:left;margin-top:7px}.workout-bar{grid-template-columns:auto minmax(0,1fr) auto}.mode{grid-column:1 / 3}.reset{grid-column:3}}
+    @media(max-width:640px){.page{width:min(100% - 20px,1160px);padding-bottom:42px}.topbar{display:block;padding-bottom:12px}.brand{display:inline-flex;align-items:center;min-height:44px;margin-bottom:8px}.nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.nav a{min-height:42px;padding:7px 5px;font-size:11.5px;text-align:center;line-height:1.1}.hero{padding:20px;border-radius:18px}.hero:after{right:-100px;top:-120px;width:230px;height:230px}.hero h1{max-width:290px;margin:12px 0 0;font-size:34px;line-height:1}.hero p{display:none}.hero-meta{gap:6px;margin-top:15px}.hero-meta span{font-size:11px}.hero-visual{display:none}.workout-bar{position:static;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;margin:12px 0 16px}.progress-mark{width:34px;height:34px}.bar-copy small{display:none}.track{margin-top:7px}.mode{grid-column:1 / -1}.mode button{flex:1;min-height:42px}.reset{grid-column:1 / -1;min-height:42px}.rule{gap:8px;margin-bottom:18px;padding:11px 12px;font-size:12.5px;line-height:1.42}.quick-jump{margin-bottom:22px}.block{margin-top:24px;scroll-margin-top:16px}.block h2{font-size:25px}.moves{gap:10px}.move{grid-template-columns:120px minmax(0,1fr);border-radius:12px}.media{min-height:148px}.copy{padding:11px;gap:7px}.move h3{font-size:17px}.topline{display:block}.dose{margin-top:7px}.cue{font-size:12.5px}.fine{display:none}.check{display:block}.check label{width:100%;justify-content:center;min-height:42px}.tempo{margin-top:6px;text-align:left}.gif-badge{right:6px;bottom:6px;min-height:24px;font-size:9px}}
+    @media(max-width:420px){.nav a{font-size:10.5px}.move{grid-template-columns:1fr}.media{aspect-ratio:16/10;min-height:0}.copy{min-height:0}.hero h1{font-size:31px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="./">Exercise<span>DB</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./">Library</a>
+        <a href="today.html">Upper Body</a>
+        <a class="active" href="lower-body.html">Lower Body</a>
+        <a href="setup.html">Setup</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow"><i></i> Today: glutes + legs sculpt</span>
+        <h1 id="hero-title">Slow reps. Full control.</h1>
+        <p>A 40-45 minute no-equipment lower-body session built around glute shape, leg strength, and steady pacing instead of rushing through reps.</p>
+        <div class="hero-meta" aria-label="Workout details">
+          <span><b>40-45 min</b> total</span>
+          <span><b>No equipment</b></span>
+          <span><b>RPE 7-8/10</b></span>
+          <span><b>21</b> visual demos</span>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <img src="lower-body-assets/slow-sumo-squat.gif" alt="Slow sumo squat animated demonstration">
+      </figure>
+    </section>
+
+    <section class="workout-bar" aria-live="polite">
+      <div class="progress-mark">✓</div>
+      <div class="bar-copy">
+        <strong>Session progress</strong>
+        <small>Checks and demo mode are saved in this browser.</small>
+        <div class="track"><div class="fill" id="progress-fill"></div></div>
+      </div>
+      <div class="count" id="count">0 / 21</div>
+      <div class="mode" aria-label="Demo mode">
+        <button type="button" data-mode="still" aria-pressed="true">Still</button>
+        <button type="button" data-mode="motion" aria-pressed="false">GIF</button>
+      </div>
+      <button class="reset" type="button" id="reset">Reset</button>
+    </section>
+
+    <aside class="rule">
+      <span class="rule-mark">!</span>
+      <div><b>Session rule:</b> slow reps, full control, no rushing. Build shape and strength without turning the workout into punishment.</div>
+    </aside>
+
+    <nav class="quick-jump" aria-label="Workout sections">
+      <a href="#warmup">Warm-up</a>
+      <a href="#strength">Main strength</a>
+      <a href="#pump">Glute pump</a>
+      <a href="#finisher">Finisher</a>
+      <a href="#cooldown">Cooldown</a>
+    </nav>
+
+    <div id="plan"></div>
+
+    <footer class="footer"><b>Form first:</b> if tempo or range starts to break, shorten the set, rest longer, or move to the cooldown.</footer>
+  </main>
+
+  <script>
+  (()=>{
+    const blocks=[
+      {id:'warmup',label:'01 · Warm-up',title:'Warm-up',note:'Six minutes to open hips, wake up glutes, and raise temperature without fatigue.',meta:['1 round','60 sec each','Easy pace'],items:[
+        {id:'squat-to-stand',name:'Squat-to-stand',dose:'60 sec',tempo:'smooth',cue:'Move from a relaxed fold into a deep squat, then stand tall.',fine:'Keep heels heavy and let the hips open gradually.'},
+        {id:'hip-circles-openers',name:'Hip circles + hip openers',dose:'60 sec',tempo:'controlled',cue:'Lift the knee, open the hip, set the foot down, then alternate.',fine:'Stay tall through the ribs and avoid swinging the leg.'},
+        {id:'bodyweight-good-mornings',name:'Bodyweight good mornings',dose:'60 sec',tempo:'slow hinge',cue:'Send hips back with soft knees and a long spine.',fine:'Feel hamstrings load lightly, then squeeze glutes to stand.'},
+        {id:'reverse-lunge-reach',name:'Alternating reverse lunge reach',dose:'60 sec',tempo:'steady',cue:'Step back, reach long, then return through the front heel.',fine:'Keep the front knee aligned and the reach comfortable.'},
+        {id:'slow-glute-bridges',name:'Slow glute bridges',dose:'60 sec',tempo:'2-sec squeeze',cue:'Lift hips, pause at the top, and lower with control.',fine:'Ribs stay down; do not arch through the low back.'},
+        {id:'low-squat-breathing-shift',name:'Low squat breathing shift',dose:'60 sec',tempo:'breathe',cue:'Hold a low squat and gently shift side to side.',fine:'Use a comfortable depth and keep the chest relaxed.'}
+      ]},
+      {id:'strength',label:'02 · Main strength',title:'Main strength block',note:'Complete three rounds. Rest 60-75 seconds after each exercise.',meta:['3 rounds','60-75 sec rest','RPE 7-8'],items:[
+        {id:'b-stance-glute-bridge',name:'B-stance glute bridge',dose:'12 / side',tempo:'2-sec top',cue:'Place one foot closer to your hips; the farther leg does most of the work.',fine:'Hold the top squeeze for two seconds before lowering.'},
+        {id:'slow-sumo-squat',name:'Slow sumo squat',dose:'15 reps',tempo:'3-sec lower',cue:'Use a wide stance with toes slightly out and lower for three seconds.',fine:'Keep knees tracking over toes and stand without rushing.'},
+        {id:'reverse-lunge',name:'Reverse lunge',dose:'10 / side',tempo:'controlled',cue:'Keep the front heel grounded and lean slightly forward from the hips.',fine:'Push through the front heel to bias glutes.'},
+        {id:'single-leg-hinge-reach',name:'Single-leg hinge reach',dose:'10 / side',tempo:'slow reach',cue:'Soften the standing knee, send hips back, and reach long.',fine:'This is the no-equipment RDL; keep the spine long.'}
+      ]},
+      {id:'pump',label:'03 · Pump',title:'Glute pump block',note:'Complete two rounds. Rest 30-45 seconds between movements.',meta:['2 rounds','30-45 sec rest','Burn without rushing'],items:[
+        {id:'donkey-kicks',name:'Donkey kicks',dose:'15 / side',tempo:'pause top',cue:'Drive the heel up and back without arching your low back.',fine:'Hips stay square; make the glute do the lift.'},
+        {id:'fire-hydrants',name:'Fire hydrants',dose:'15 / side',tempo:'steady',cue:'Open one bent knee out to the side while keeping the torso quiet.',fine:'Move only as high as you can without twisting.'},
+        {id:'side-lying-leg-raises',name:'Side-lying leg raises',dose:'20 / side',tempo:'smooth',cue:'Stack the hips and lift the top leg with control.',fine:'Lead through the heel and lower slowly.'},
+        {id:'frog-pumps',name:'Frog pumps',dose:'30 reps',tempo:'constant',cue:'Bring soles together, open knees, and pump hips with glute squeeze.',fine:'Keep ribs down and avoid turning it into a back arch.'}
+      ]},
+      {id:'finisher',label:'04 · Finisher',title:'Four-minute finisher',note:'Repeat the sequence twice. Keep the burn controlled.',meta:['2 repeats','4 min','No extra rest'],items:[
+        {id:'wall-sit',name:'Wall sit',dose:'45 sec',tempo:'hold',cue:'Back against the wall, feet flat, knees stacked over ankles.',fine:'Stay tall and breathe instead of collapsing into the wall.'},
+        {id:'glute-bridge-hold',name:'Glute bridge hold',dose:'30 sec',tempo:'hold',cue:'Hold the top bridge and keep a steady glute squeeze.',fine:'Ribs down, hips level, heels grounded.'},
+        {id:'squat-pulses',name:'Squat pulses',dose:'20 pulses',tempo:'small range',cue:'Pulse a few inches near the bottom of your squat.',fine:'No bouncing; keep the range tight and controlled.'}
+      ]},
+      {id:'cooldown',label:'05 · Cooldown',title:'Cooldown',note:'Four minutes to settle your hips, hamstrings, and breathing.',meta:['4 min','No bouncing','Downshift'],items:[
+        {id:'figure-four-glute-stretch',name:'Figure-four glute stretch',dose:'45 sec / side',tempo:'hold',cue:'Cross ankle over thigh and gently pull the supporting leg in.',fine:'Keep the neck and shoulders relaxed.'},
+        {id:'hip-flexor-stretch',name:'Hip-flexor stretch',dose:'45 sec / side',tempo:'hold',cue:'Half-kneel, tuck the pelvis slightly, and shift forward gently.',fine:'Front knee stays over ankle; avoid low-back arching.'},
+        {id:'hamstring-fold',name:'Hamstring fold',dose:'60 sec',tempo:'easy fold',cue:'Hinge from the hips with soft knees and breathe into the stretch.',fine:'Stop where the hamstrings stretch without strain.'},
+        {id:'slow-breathing',name:'Slow breathing',dose:'60 sec',tempo:'recover',cue:'Let the breath slow down and soften the shoulders.',fine:'Finish calm, not depleted.'}
+      ]}
+    ];
+    const storageKey='exercisedb-lower-body-plan-v1';
+    const saved=JSON.parse(localStorage.getItem(storageKey)||'{}');
+    const state={done:saved.done||{},mode:saved.mode||'still'};
+    const $=(selector,root=document)=>root.querySelector(selector);
+    const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
+    const all=blocks.flatMap(block=>block.items);
+    function save(){localStorage.setItem(storageKey,JSON.stringify(state))}
+    function asset(item){return `lower-body-assets/${item.id}.${state.mode==='motion'?'gif':'jpg'}`}
+    function itemCard(item){
+      const done=!!state.done[item.id];
+      return `<article class="move ${done?'done':''}" data-move="${esc(item.id)}"><div class="media"><img loading="lazy" decoding="async" src="${asset(item)}" alt="${esc(item.name)} exercise demo">${state.mode==='motion'?'<span class="gif-badge">GIF</span>':''}</div><div class="copy"><div class="topline"><h3>${esc(item.name)}</h3><span class="dose">${esc(item.dose)}</span></div><div><p class="cue">${esc(item.cue)}</p><p class="fine">${esc(item.fine)}</p></div><div class="check"><label><input type="checkbox" data-done="${esc(item.id)}" ${done?'checked':''}>Done</label><span class="tempo">${esc(item.tempo)}</span></div></div></article>`;
+    }
+    function blockView(block){
+      return `<section class="block" id="${esc(block.id)}"><div class="block-head"><div><div class="kicker">${esc(block.label)}</div><h2>${esc(block.title)}</h2><div class="block-meta">${block.meta.map(tag=>`<span>${esc(tag)}</span>`).join('')}</div></div><p class="block-note">${esc(block.note)}</p></div><div class="moves">${block.items.map(itemCard).join('')}</div></section>`;
+    }
+    function updateProgress(){
+      const done=all.filter(item=>state.done[item.id]).length;
+      $('#progress-fill').style.width=`${done/all.length*100}%`;
+      $('#count').textContent=`${done} / ${all.length}`;
+      document.querySelectorAll('[data-mode]').forEach(button=>button.setAttribute('aria-pressed',button.dataset.mode===state.mode?'true':'false'));
+    }
+    function render(){
+      $('#plan').innerHTML=blocks.map(blockView).join('');
+      updateProgress();
+    }
+    document.addEventListener('change',event=>{
+      const input=event.target.closest('[data-done]');
+      if(!input)return;
+      state.done[input.dataset.done]=input.checked;
+      save();
+      input.closest('.move')?.classList.toggle('done',input.checked);
+      updateProgress();
+    });
+    document.addEventListener('click',event=>{
+      const mode=event.target.closest('[data-mode]');
+      if(mode){
+        state.mode=mode.dataset.mode;
+        save();
+        render();
+        return;
+      }
+    });
+    $('#reset').addEventListener('click',()=>{
+      state.done={};
+      save();
+      render();
+    });
+    render();
+  })();
+  </script>
+</body>
+</html>

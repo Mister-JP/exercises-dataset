@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSETS = ROOT / "today-assets"
-SHEETS = ASSETS / "sheets"
+DEFAULT_ASSET_DIR = ROOT / "today-assets"
 SIZE = 720
 GIF_FRAME_DURATION_MS = 650
 
@@ -32,16 +32,19 @@ def crop_panels(sheet: Image.Image) -> list[Image.Image]:
     return panels
 
 
-def main() -> None:
-    for sheet_path in sorted(SHEETS.glob("*.png")):
+def build_asset_dir(asset_dir: Path) -> None:
+    sheets_dir = asset_dir / "sheets"
+    if not sheets_dir.exists():
+        return
+    for sheet_path in sorted(sheets_dir.glob("*.png")):
         if sheet_path.name.startswith("ai-reference"):
             continue
         slug = sheet_path.stem
         frames = crop_panels(Image.open(sheet_path))
-        frames[0].save(ASSETS / f"{slug}.jpg", quality=94, optimize=True)
+        frames[0].save(asset_dir / f"{slug}.jpg", quality=94, optimize=True)
         sequence = frames + frames[-2:0:-1]
         sequence[0].save(
-            ASSETS / f"{slug}.gif",
+            asset_dir / f"{slug}.gif",
             save_all=True,
             append_images=sequence[1:],
             duration=GIF_FRAME_DURATION_MS,
@@ -49,6 +52,12 @@ def main() -> None:
             optimize=True,
             disposal=2,
         )
+
+
+def main() -> None:
+    asset_dirs = [ROOT / arg for arg in sys.argv[1:]] or [DEFAULT_ASSET_DIR]
+    for asset_dir in asset_dirs:
+        build_asset_dir(asset_dir)
 
 
 if __name__ == "__main__":
