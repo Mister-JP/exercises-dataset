@@ -1,0 +1,173 @@
+{
+  "squat-to-stand": {
+    "type": "video",
+    "url": "https://stream.mux.com/uGCe88b02QDpzwXgA02QZmfJ5jhIdojml1veIwG1WcX3M.m3u8",
+    "source": "Hinge Health squat video",
+    "page": "https://www.hingehealth.com/resources/articles/squat/",
+    "ss": 0,
+    "dur": 5
+  },
+  "hip-circles-openers": {
+    "type": "video",
+    "path": "tmp/lower-body-frame-by-frame/ref-videos/hip-circles-openers.mp4",
+    "source": "Fitbod standing hip circle local source video",
+    "page": "https://fitbod.me/exercises/standing-hip-circle",
+    "ss": 0,
+    "dur": 5,
+    "crop": "crop=iw*0.46:ih:iw*0.27:0"
+  },
+  "bodyweight-good-mornings": {
+    "type": "video",
+    "url": "https://stream.mux.com/qSkGC596TLeguMh9Iq8pqumZi47my3AiUGejudrnJqo.m3u8",
+    "source": "Hinge Health hip hinge video",
+    "page": "https://www.hingehealth.com/resources/articles/hip-hinge/",
+    "ss": 0,
+    "dur": 5
+  },
+  "reverse-lunge-reach": {
+    "type": "still",
+    "urls": [
+      "https://www.muscleandfitness.com/wp-content/uploads/2018/04/800-revlungereach.jpg"
+    ],
+    "source": "Muscle & Fitness reverse lunge reach still",
+    "page": "https://www.muscleandfitness.com/exercise/workouts/full-body-exercises/reverse-lunge-reach/"
+  },
+  "slow-glute-bridges": {
+    "type": "video",
+    "url": "https://stream.mux.com/00oJ021DCcVhnnHEhSsbJm9TtvQV7OgZWiF7v6BZmOgpU.m3u8",
+    "source": "Hinge Health bridge exercise video",
+    "page": "https://www.hingehealth.com/resources/articles/bridge-exercise/",
+    "ss": 0,
+    "dur": 5
+  },
+  "low-squat-breathing-shift": {
+    "type": "video",
+    "url": "https://stream.mux.com/T4Uh4SXeksX5jM4v1LQFA9XHkw7aAbipZ9lof9DwE1k.m3u8",
+    "source": "Hinge Health deep squat video",
+    "page": "https://www.hingehealth.com/resources/articles/benefits-of-deep-squat/",
+    "ss": 0,
+    "dur": 5
+  },
+  "b-stance-glute-bridge": {
+    "type": "still",
+    "urls": [
+      "https://cdn.shopify.com/s/files/1/0586/4721/6311/files/6B1A8671.jpg?v=1669787377"
+    ],
+    "source": "FORM B-stance glute bridge source still",
+    "page": "https://digital.joinform.co/videos/b-stance-glute-bridge-4x10-per-side"
+  },
+  "slow-sumo-squat": {
+    "type": "video",
+    "url": "https://assets.gymshark.com/8urtyqugdt2l/2vP4rkPPVwTeVBoipeJB0j/8737b9990620ce01d64fabe2e1fc77d2/sumo-squat.mp4",
+    "source": "Gymshark bodyweight sumo squat video",
+    "page": "https://www.gymshark.com/blog/article/how-to-do-sumo-squats",
+    "ss": 0,
+    "dur": 5
+  },
+  "reverse-lunge": {
+    "type": "video",
+    "url": "https://stream.mux.com/2sKfdyr4EHiwkoqYB5oUmttBGD2K00Bakq6LrpKMjRqA.m3u8",
+    "source": "Hinge Health reverse lunge video",
+    "page": "https://www.hingehealth.com/resources/articles/reverse-lunges/",
+    "ss": 0,
+    "dur": 5
+  },
+  "single-leg-hinge-reach": {
+    "type": "still",
+    "urls": [
+      "https://cdn.muscleandstrength.com/sites/default/files/bodyweight-single-leg-deadlift.jpg"
+    ],
+    "source": "Muscle & Strength bodyweight single-leg deadlift still",
+    "page": "https://www.muscleandstrength.com/exercises/bodyweight-single-leg-deadlift"
+  },
+  "donkey-kicks": {
+    "type": "video",
+    "url": "https://stream.mux.com/IrMVbvdIDte8luo2VTZEt5XXnZhqkZhWMHJ2hH02PWKU.m3u8",
+    "source": "Hinge Health donkey kicks video",
+    "page": "https://www.hingehealth.com/resources/articles/donkey-kicks/",
+    "ss": 0,
+    "dur": 5
+  },
+  "fire-hydrants": {
+    "type": "video",
+    "url": "https://stream.mux.com/AhsDI4jYQDfeUEP01d93nIDWAYelrixcJPJEhuFlcr0200.m3u8",
+    "source": "Hinge Health fire hydrants video",
+    "page": "https://www.hingehealth.com/resources/articles/fire-hydrants/",
+    "ss": 0,
+    "dur": 5
+  },
+  "side-lying-leg-raises": {
+    "type": "still",
+    "urls": [
+      "https://www.muscleandfitness.com/wp-content/uploads/2014/02/546_A.jpg",
+      "https://www.muscleandfitness.com/wp-content/uploads/2014/02/546_B.jpg"
+    ],
+    "source": "Muscle & Fitness side-lying leg raise still sequence",
+    "page": "https://www.muscleandfitness.com/training/workout-routines/side-lying-leg-raise"
+  },
+  "frog-pumps": {
+    "type": "video",
+    "path": "tmp/lower-body-frame-by-frame/ref-videos/frog-pumps.mp4",
+    "source": "Fitbod frog pump local source video",
+    "page": "https://fitbod.me/exercises/frog-pump",
+    "ss": 0,
+    "dur": 5,
+    "crop": "crop=iw*0.62:ih*0.70:iw*0.10:ih*0.18"
+  },
+  "wall-sit": {
+    "type": "video",
+    "url": "https://stream.mux.com/X2rLu1VlSJnmxcHK02ZUXOqCYXTLmNag6hX5QfVILxxs.m3u8",
+    "source": "Hinge Health wall squat/wall sit video",
+    "page": "https://www.hingehealth.com/resources/articles/wall-squats/",
+    "ss": 0,
+    "dur": 5
+  },
+  "glute-bridge-hold": {
+    "type": "video",
+    "url": "https://stream.mux.com/024xjitZuQ02l9qcfMZK01PGjAL95AN00YSex7CN01x6MFIQ.m3u8",
+    "source": "Hinge Health bridge hold video",
+    "page": "https://www.hingehealth.com/resources/articles/bridge-exercise/",
+    "ss": 0,
+    "dur": 5
+  },
+  "squat-pulses": {
+    "type": "video",
+    "url": "https://stream.mux.com/x1d5wfYzJ2o6aVM4VZsC00QCUZrnUi02YTqHkLhyh8BYk.m3u8",
+    "source": "Hinge Health squat video, bottom-range source for pulse demo",
+    "page": "https://www.hingehealth.com/resources/articles/squat/",
+    "ss": 0,
+    "dur": 5
+  },
+  "figure-four-glute-stretch": {
+    "type": "video",
+    "url": "https://stream.mux.com/6dLk02z6nXDCJ83p7BThjztD200FPSBfNiLTGpm6ejbms.m3u8",
+    "source": "Hinge Health figure-four stretch video",
+    "page": "https://www.hingehealth.com/resources/articles/figure-four/",
+    "ss": 0,
+    "dur": 5
+  },
+  "hip-flexor-stretch": {
+    "type": "video",
+    "url": "https://stream.mux.com/jwBHNOTQr7J3Zs723cxSfZVfMP4PF2WufGVL9dYNt200.m3u8",
+    "source": "Hinge Health hip flexor stretch video",
+    "page": "https://www.hingehealth.com/resources/articles/hip-flexor-stretch/",
+    "ss": 0,
+    "dur": 5
+  },
+  "hamstring-fold": {
+    "type": "video",
+    "url": "https://stream.mux.com/cTKkek02747BPgTeEMA02YlcWQAzf3Xqx44o85Xg2jHdU.m3u8",
+    "source": "Hinge Health hamstring stretch video",
+    "page": "https://www.hingehealth.com/resources/articles/hamstring-stretch/",
+    "ss": 0,
+    "dur": 5
+  },
+  "slow-breathing": {
+    "type": "video",
+    "url": "https://stream.mux.com/5CXFRw1tFSjTWuBVT302700b6Ea8MQOLr8HrTn4jyym01U.m3u8",
+    "source": "Hinge Health diaphragmatic breathing video",
+    "page": "https://www.hingehealth.com/resources/articles/diaphragmatic-breathing/",
+    "ss": 0,
+    "dur": 5
+  }
+}
